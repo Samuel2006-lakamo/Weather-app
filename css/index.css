@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Exo+2:wght@400;600&display=swap");
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background: #e0e0e0;
+    color: #2c2c2c;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+h1,
+h2,
+h3 {
+    font-family: "Orbitron", sans-serif;
+}
+body {
+}
+/*section  {
+    width: 50px;
+    background-attachment: lightblue;
+    header: 100px;
+    display: flex;
+}*/
+.header {
+    background: #121a4b;
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 0;
+    width: 100vw;
+    border-bottom: 2px solid #cfcfcf;
+    top: 0;
+    position: sticky;
+    margin-bottom: 10px;
+}
+.header .left-side img {
+    width: 50px;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.header .left-side h1 {
+    color: #f1efef;
+    font-size: 14px;
+    margin-top: 0;
+    padding-top: 0;
+}
+.header .left-side h1 span {
+    color: goldenrod;
+    font-size: 16px;
+}
+.header .right-side button {
+    background: none;
+    border: none;
+}
+
+.header .right-side button i {
+    color: #f1efef;
+    font-size: 18px;
+}
+.main .tools {
+    padding: 0 20px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+    margin: 0;
+    width: 100vw;
+
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+.main .tools .left-tool {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main .tools .left-tool .search input {
+    width: 70%;
+    background: #f5f5f5;
+    border-radius: 5px;
+    height: 2rem;
+    border: none;
+    padding: 10px;
+}
+.main .tools .left-tool button {
+    width: 20%;
+    padding-left: -20px;
+    margin-left: -10px;
+    height: 2rem;
+    border: none;
+    background: #1b216d;
+    color: #f1efef;
+    border-radius: 0 5px 5px 0px;
+    cursor: pointer;
+}
+.main .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1c1717;
+}
+.main .body .main-left {
+    background: #fff;
+
+    padding: 10px;
+    width: 100%;
+}
+.main .body {
+    background:;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    place-items: center;
+}
+.main .body .main-right {
+    background: #fff;
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+}
+.main .body .main-right .weather-data div {
+    line-height: 1.17;
+    padding: 5px;
+    color: #211d1d;
+}
+.main .body .main-left .city-date {
+    font-size: 12px;
+    line-height: 1.7;
+    color: goldenrod;
+    margin-bottom: 0;
+}
+.container {
+    height: 100vh;
+}
+.main .body .main-left .city-name-country {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: roboto;
+}
+.main .body .main-left .comment {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.main .body .main-left .weather-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/*.main .body .main-left .weather-data hr {
+    height: 100px;
+    width: 5px;
+    color: goldenrod;
+    border-color: goldenrod;
+    border: none;
+    border-radius: 20px;
+    background: goldenrod;
+}*/
+
+/* Loading spinner styles */
+ .container .loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.footer {
+    position:;
+    border-top: 2px solid goldenrod;
+    background: #0b1f3a;
+    color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top: 2px solid #333;
+}
+.footer h1 {
+    text-align: center;
+    padding: 20px;
+    line-height: 1.17px;
+}
+.footer .contact .title {
+    color: goldenrod;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #00bfff;
+}
+.footer .contact ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    list-style:;
+    display: flex;
+    align-items: center;
+    justify-content: space;
+
+    flex: 1fr 1fr;
+    gap: 20px;
+}
+.footer .contact ul li {
+    margin-bottom: 5px;
+}
+.footer .creator p {
+    font-size: 14px;
+    text-spacing-trim: 2px;
+    padding: 20px;
+    font-style: italic;
+    margin-bottom: 15px;
+    list-style: none;
+}
+.footer .contact ul a {
+    color: #e4e4e4;
+    font-style: italic;
+    list-style: none;
+}
+.footer .contact ul a:hover {
+    color: #89cff0;
+}
+
+.footer .creator p span {
+    color: goldenrod;
+    padding: 5px;
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/index.css" />
+        <!-- Leaflet CSS -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        />
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+        <!-- Add this in your HTML body -->
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <title>weather-app</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <section class="header">
+                <div class="left-side">
+                    <img src="/img/sun.png" alt="logo.png" />
+                    <h1><span class=""> W</span>eatherBuddy</h1>
+                </div>
+
+                <div class="right-side">
+                    <button type=""><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </section>
+            <section class="dialogue-box-container"></section>
+
+            <section class="main">
+                <div class="tools">
+                    <div class="left-tool">
+                        <div class="search">
+                            <input
+                                type="search"
+                                name=""
+                                id="city-input"
+                                placeholder="Enter city"
+                            />
+                            <button type="submit" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--                    <div class="right-tool">
+                        <button class="button" type="submit">kelvin</button>
+                        <button class="">Falheriat</button>
+                        <button type="submit">Celcuis</button>
+                    </div>-->
+                </div>
+                <div class="container">
+                  <div class="loader"></div>
+                
+                </div>
+            </section>
+
+            <section class="footer">
+                <div>
+                    <h1>Your Weather App</h1>
+                </div>
+                <div class="contact">
+                    <p class="title">Contact the Creator:</p>
+                    <ul class="">
+                        <li>Tel: 09132709107</li>
+                        <li>
+                            G-mail:
+                            <a href="mailto:lakamosamuel7@gmail.com"
+                                >lakamosamuel7@gmail.com</a
+                            >
+                        </li>
+                        <li class="">
+                            Github:
+                            <a href="https://github.com/Samuel2006-lakamo"
+                                >Samuel2006-lakamo</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="creator">
+                    <p><span>Created by:</span> &#169; Big Sam || Dev <i class="fa-fas code"></i> 2025</p>
+                </div>
+            </section>
+        </div>
+
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>
