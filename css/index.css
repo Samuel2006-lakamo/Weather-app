@@ -101,7 +101,8 @@ h3 {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
-.right-tool {
+
+/*.right-tool {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,8 +112,38 @@ h3 {
     padding: 5px 10px;
     background: #fff;
     border-radius: 8px;
-    border: none;
+    border: pointer;
+    cursor: crosshair;
     box-shadow: 10 10 10 #fff;
+}
+.right-tool button:active{
+  background: #1b216d;
+}*/
+.right-tool {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.right-tool button {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.right-tool button.active {
+  background: #1b216d;
+  color: white;
+}
+
+.right-tool button:hover:not(.active) {
+  background: #d0d0d0;
 }
 /* ===== Weather Body ===== */
 .body {
