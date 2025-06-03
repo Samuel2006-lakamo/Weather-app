@@ -1,29 +1,28 @@
+/* ===== Base Styles ===== */
+
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Exo+2:wght@400;600&display=swap");
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: "Exo 2", sans-serif;
     background: #e0e0e0;
     color: #2c2c2c;
+    line-height: 1.5;
 }
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 15px;
-}
+
 h1,
 h2,
 h3 {
     font-family: "Orbitron", sans-serif;
 }
-body {
-}
-/*section  {
-    width: 50px;
-    background-attachment: lightblue;
-    header: 100px;
-    display: flex;
-}*/
+
+/* ===== Header ===== */
 .header {
     background: #121a4b;
     height: 70px;
@@ -32,28 +31,27 @@ body {
     align-items: center;
     justify-content: space-between;
     color: white;
-    margin: 0;
-    width: 100vw;
-    border-bottom: 2px solid #cfcfcf;
-    top: 0;
     position: sticky;
-    margin-bottom: 10px;
+    top: 0;
+    z-index: 100000;
+    border-bottom: 2px solid #cfcfcf;
 }
+
 .header .left-side img {
     width: 50px;
-    margin: 0;
     padding: 0 0 0 15px;
 }
+
 .header .left-side h1 {
     color: #f1efef;
     font-size: 14px;
-    margin-top: 0;
-    padding-top: 0;
 }
+
 .header .left-side h1 span {
     color: goldenrod;
     font-size: 16px;
 }
+
 .header .right-side button {
     background: none;
     border: none;
@@ -63,182 +61,229 @@ body {
     color: #f1efef;
     font-size: 18px;
 }
-.main .tools {
-    padding: 0 20px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
 
-    margin: 0;
-    width: 100vw;
-
-    margin-bottom: 10px;
-    flex-direction: column;
+/* ===== Main Content ===== */
+.main {
+    padding: 10px;
 }
-.main .tools .left-tool {
-    width: 100%;
+
+.tools {
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
-.main .tools .left-tool .search input {
-    width: 70%;
+
+.left-tool {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex: 1fr 100px;
+}
+
+.search input {
     background: #f5f5f5;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     height: 2rem;
     border: none;
     padding: 10px;
 }
-.main .tools .left-tool button {
-    width: 20%;
-    padding-left: -20px;
-    margin-left: -10px;
+
+.left-tool button {
+    width: 50px;
     height: 2rem;
     border: none;
     background: #1b216d;
     color: #f1efef;
-    border-radius: 0 5px 5px 0px;
+    margin-left: -5px;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
-.main .body {
+.right-tool {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #1c1717;
+    gap: 15px;
 }
-.main .body .main-left {
+.right-tool button {
+    padding: 5px 10px;
     background: #fff;
-
-    padding: 10px;
-    width: 100%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 10 10 10 #fff;
 }
-.main .body {
-    background:;
+/* ===== Weather Body ===== */
+.body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
 
-    place-items: center;
+    margin-top: 20px;
 }
-.main .body .main-right {
+.main {
+    min-height: 70vh;
+}
+.main-left,
+.main-right {
     background: #fff;
-    padding: 10px;
-    height: 100px;
+    padding: 15px;
+    border-radius: 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Map Container ===== */
+#map {
+    height: 400px;
     width: 100%;
+    background: transparent;
+    border-radius: 8px;
 }
-.main .body .main-right .weather-data div {
-    line-height: 1.17;
-    padding: 5px;
-    color: #211d1d;
+
+/* Leaflet Overrides */
+.leaflet-container {
+    font-family: "Exo 2", sans-serif !important;
+    -webkit-tap-highlight-color: transparent;
+    background: none !important;
+    background-color: transparent !important;
+    touch-action: manipulation;
 }
-.main .body .main-left .city-date {
+
+/* ===== Weather Data ===== */
+.city-date {
     font-size: 12px;
-    line-height: 1.7;
     color: goldenrod;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
-.container {
-    height: 100vh;
-}
-.main .body .main-left .city-name-country {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: bolder;
+
+.city-name-country {
+    margin: 0 0 15px 0;
     font-size: 20px;
-    font-family: roboto;
-}
-.main .body .main-left .comment {
     font-weight: bold;
-    font-size: 20px;
+}
+
+.comment {
+    font-weight: bold;
+    font-size: 16px;
     margin-bottom: 15px;
 }
-.main .body .main-left .weather-data {
+
+.weather-data {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-}
-/*.main .body .main-left .weather-data hr {
-    height: 100px;
-    width: 5px;
-    color: goldenrod;
-    border-color: goldenrod;
-    border: none;
-    border-radius: 20px;
-    background: goldenrod;
-}*/
-
-/* Loading spinner styles */
- .container .loader {
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-  display: none; /* Hidden by default */
+    justify-content: space-between;
+    margin: 15px 0;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.weather-icon {
+    width: 60px;
+    height: 60px;
 }
+
+/* ===== Footer ===== */
 .footer {
-    position:;
-    border-top: 2px solid goldenrod;
     background: #0b1f3a;
     color: #e4e4e4;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-top: 2px solid #333;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid goldenrod;
 }
+
 .footer h1 {
     text-align: center;
-    padding: 20px;
-    line-height: 1.17px;
+    padding: 10px 0;
 }
-.footer .contact .title {
-    color: goldenrod;
+
+.contact .title {
+    color: #00bfff;
     text-align: center;
     font-size: 16px;
-    margin-bottom: 5px;
-    color: #00bfff;
-}
-.footer .contact ul {
-    margin-top: 10px;
     margin-bottom: 10px;
-    list-style:;
-    display: flex;
-    align-items: center;
-    justify-content: space;
+}
 
-    flex: 1fr 1fr;
+.contact ul {
     gap: 20px;
-}
-.footer .contact ul li {
-    margin-bottom: 5px;
-}
-.footer .creator p {
+    list-style: none;
+    margin: 15px 0;
     font-size: 14px;
-    text-spacing-trim: 2px;
-    padding: 20px;
-    font-style: italic;
-    margin-bottom: 15px;
-    list-style: none;
 }
-.footer .contact ul a {
+.contact ul li i {
+    color: #89cff0;
+    padding-right: 10px;
+}
+
+.contact ul a {
     color: #e4e4e4;
-    font-style: italic;
-    list-style: none;
+    text-decoration: none;
 }
-.footer .contact ul a:hover {
+
+.contact ul a:hover {
     color: #89cff0;
 }
 
-.footer .creator p span {
+.creator p {
+    font-size: 14px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.creator p span {
     color: goldenrod;
-    padding: 5px;
+}
+
+/* ===== Loader ===== */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (min-width: 768px) {
+    .body {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .tools {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .left-tool {
+        width: auto;
+    }
+
+    .search input {
+        width: auto;
+    }
+
+    .left-tool button {
+        width: auto;
+        padding: 0 15px;
+    }
+    .contact ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style: none;
+        margin: 15px 0;
+    }
 }
