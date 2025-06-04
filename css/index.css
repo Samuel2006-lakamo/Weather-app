@@ -145,6 +145,49 @@ h3 {
 .right-tool button:hover:not(.active) {
   background: #d0d0d0;
 }
+.error-card {
+  background: #ffebee;
+  border-left: 4px solid #f44336;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-card i {
+  color: #f44336;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.error-card h3 {
+  color: #d32f2f;
+  margin: 0 0 10px;
+}
+
+.error-card p {
+  color: #5f2120;
+  margin-bottom: 15px;
+}
+
+.dismiss-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
 /* ===== Weather Body ===== */
 .body {
     display: grid;
